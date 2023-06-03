@@ -86,11 +86,11 @@
 
 将 hub.yyy.com、gcr.yyy.com 解析到此服务器的地址上。
 
-我们可以通过 http://hub.yyy.com 查看镜像仓库缓存的镜像；可以通过gcr.yyy.com下载镜像。
+我们可以通过 http://gcr.yyy.com 查看镜像仓库缓存的镜像；可以通过hub.yyy.com下载镜像。
 
 ## 使用镜像仓库代理
 
-**我们只需要将 k8s.gcr.io 替换成 gcr.yyy.com/google-containers；将 gcr.io 替换成 gcr.yyy.com 就可以下载 gcr.io 仓库里的镜像了。**
+**我们只需要将 k8s.gcr.io 替换成 gcr.yyy.com/google-containers；将 gcr.io 替换成 hub.yyy.com 就可以下载 hub.io 仓库里的镜像了。**
 
 比如我们要下载镜像：
 
@@ -102,13 +102,13 @@
 
 比如我们要下载镜像：
 
-    $ gcr.io/kubernetes-helm/tiller:v2.16.3
-    $ gcr.io/google-containers/etcd:3.2.24
+    $ docker pull nyanmisaka/jellyfin:latest
+    $ docker pull 6053537/portainer:linux-arm64
 
 可以如下通过镜像仓库代理下载：
 
-    $ gcr.yyy.com/kubernetes-helm/tiller:v2.16.3
-    $ gcr.yyy.com/google-containers/etcd:3.2.24
+    $docker pull hub.ggg999.xyz/nyanmisaka/jellyfin:latest
+    $docker pull hub.ggg999.xyz/6053537/portainer:linux-arm64
 
 如果你用 kubeadm 部署 Kubernetes 集群，可以在 kubeadm 配置文件中设置镜像地址为：gcr.yyy.com/google-containers
 
