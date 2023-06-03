@@ -17,7 +17,7 @@ services:
     image: findsec/registry-proxy:latest
     restart: always
     environment:
-      - PROXY_REMOTE_URL=https://gcr.io
+      - PROXY_REMOTE_URL=https://registry-1.docker.io
     volumes:
       - ~/data/registry:/var/lib/registry
     networks:
